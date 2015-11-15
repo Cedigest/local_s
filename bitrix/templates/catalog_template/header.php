@@ -160,7 +160,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 			<div class="row">
 				<div class="left_catalog_menu col-md-8 col-lg-8">
 					<?$APPLICATION->IncludeComponent(
-							"own:menu",
+							"bitrix:menu",
 							"tree",
 							Array(
 									"ALLOW_MULTI_SELECT" => "N",
