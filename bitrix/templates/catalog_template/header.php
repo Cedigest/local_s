@@ -149,22 +149,22 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 				<div class="left_catalog_menu col-md-3 col-lg-3">
 					<?$APPLICATION->IncludeComponent(
 						"bitrix:menu",
-						"tree",
-						array(
-							"ALLOW_MULTI_SELECT" => "N",
-							"CHILD_MENU_TYPE" => "catalog_m",
-							"COMPONENT_TEMPLATE" => "tree",
-							"DELAY" => "N",
-							"MAX_LEVEL" => "2",
-							"MENU_CACHE_GET_VARS" => array(
-							),
-							"MENU_CACHE_TIME" => "3600",
-							"MENU_CACHE_TYPE" => "N",
-							"MENU_CACHE_USE_GROUPS" => "Y",
-							"ROOT_MENU_TYPE" => "catalog_m",
-							"USE_EXT" => "N"
-						),
-						false
+					"bottom_menu",
+					array(
+					"ALLOW_MULTI_SELECT" => "N",
+					"CHILD_MENU_TYPE" => "catalog_m",
+					"COMPONENT_TEMPLATE" => "bottom_menu",
+					"DELAY" => "N",
+					"MAX_LEVEL" => "2",
+					"MENU_CACHE_GET_VARS" => array(
+					),
+					"MENU_CACHE_TIME" => "3600",
+					"MENU_CACHE_TYPE" => "N",
+					"MENU_CACHE_USE_GROUPS" => "Y",
+					"ROOT_MENU_TYPE" => "catalog_m",
+					"USE_EXT" => "Y"
+					),
+					false
 					);?>
 				</div>
 			<?$isCatalogPage = preg_match("~^".SITE_DIR."catalog/~", $curPage);?>

@@ -12,6 +12,7 @@ body.bx-opened {
 }
 
 a:hover, a:focus {
+	color: black;
 	text-decoration: none !important;
 }
 
