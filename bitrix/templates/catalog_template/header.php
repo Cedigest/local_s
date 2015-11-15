@@ -146,7 +146,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 		<div class="container bx-content-seection">
 				<!--<h1 class="bx-title dbg_title"><?=$APPLICATION->ShowTitle(false);?></h1>-->
 			<div class="row">
-				<div class="left_catalog_menu col-md-4 col-lg-4">
+				<div class="left_catalog_menu col-md-3 col-lg-3">
 					<?$APPLICATION->IncludeComponent(
 						"bitrix:menu",
 						"tree",
@@ -168,7 +168,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 					);?>
 				</div>
 			<?$isCatalogPage = preg_match("~^".SITE_DIR."catalog/~", $curPage);?>
-				<div class="bx-content col-md-8 col-lg-8">
+				<div class="bx-content col-md-9 col-lg-9">
 					<div class="row">
 						<div class="col-lg-12" id="navigation">
 							<?$APPLICATION->IncludeComponent("own:breadcrumb", "", array(
