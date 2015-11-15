@@ -144,22 +144,37 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 	</header>
 	<div class="workarea">
 		<div class="container bx-content-seection">
-				<div class="row">
-					<div class="col-lg-12" id="navigation">
-						<?$APPLICATION->IncludeComponent("own:breadcrumb", "", array(
-								"START_FROM" => "0",
-								"PATH" => "",
-								"SITE_ID" => "-"
-						),
-								false,
-								Array('HIDE_ICONS' => 'Y')
-						);?>
-					</div>
-				</div>
 				<!--<h1 class="bx-title dbg_title"><?=$APPLICATION->ShowTitle(false);?></h1>-->
 			<div class="row">
-				<div class="left_catalog_menu">
-					afghf
+				<div class="left_catalog_menu col-md-3 col-lg-3">
+					<span class="cat_title">Каталог товаров</span>
+					<?$APPLICATION->IncludeComponent("bitrix:menu", "catalog_menu", Array(
+						"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+							"CHILD_MENU_TYPE" => "catalog_m",	// Тип меню для остальных уровней
+							"COMPONENT_TEMPLATE" => "tree",
+							"DELAY" => "N",	// Откладывать выполнение шаблона меню
+							"MAX_LEVEL" => "2",	// Уровень вложенности меню
+							"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+							"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+							"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+							"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+							"ROOT_MENU_TYPE" => "catalog_m",	// Тип меню для первого уровня
+							"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+						),
+						false
+					);?>
 				</div>
 			<?$isCatalogPage = preg_match("~^".SITE_DIR."catalog/~", $curPage);?>
-				<div class="bx-content <?if ($curPage == "/news/index.php" || $curPage == "/topics/index.php"):?> col-md-8 col-lg-8 <?else:?> col-md-12 col-sm-12 <?endif;?>">
+				<div class="bx-content col-md-9 col-lg-9">
+					<div class="row">
+						<div class="col-lg-12" id="navigation">
+							<?$APPLICATION->IncludeComponent("own:breadcrumb", "", array(
+									"START_FROM" => "0",
+									"PATH" => "",
+									"SITE_ID" => "-"
+							),
+									false,
+									Array('HIDE_ICONS' => 'Y')
+							);?>
+						</div>
+					</div>
