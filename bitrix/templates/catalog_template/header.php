@@ -144,38 +144,40 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 	</header>
 	<div class="workarea">
 		<div class="container bx-content-seection">
-				<div class="row">
-					<div class="col-lg-12" id="navigation">
-						<?$APPLICATION->IncludeComponent("own:breadcrumb", "", array(
-								"START_FROM" => "0",
-								"PATH" => "",
-								"SITE_ID" => "-"
-						),
-								false,
-								Array('HIDE_ICONS' => 'Y')
-						);?>
-					</div>
-				</div>
 				<!--<h1 class="bx-title dbg_title"><?=$APPLICATION->ShowTitle(false);?></h1>-->
 			<div class="row">
-				<div class="left_catalog_menu col-md-8 col-lg-8">
+				<div class="left_catalog_menu col-md-4 col-lg-4">
 					<?$APPLICATION->IncludeComponent(
-							"bitrix:menu",
-							"tree",
-							Array(
-									"ALLOW_MULTI_SELECT" => "N",
-									"CHILD_MENU_TYPE" => "left",
-									"COMPONENT_TEMPLATE" => "tree",
-									"DELAY" => "N",
-									"MAX_LEVEL" => "1",
-									"MENU_CACHE_GET_VARS" => array(""),
-									"MENU_CACHE_TIME" => "3600",
-									"MENU_CACHE_TYPE" => "N",
-									"MENU_CACHE_USE_GROUPS" => "Y",
-									"ROOT_MENU_TYPE" => "left",
-									"USE_EXT" => "N"
-							)
+						"bitrix:menu",
+						"tree",
+						array(
+							"ALLOW_MULTI_SELECT" => "N",
+							"CHILD_MENU_TYPE" => "catalog_m",
+							"COMPONENT_TEMPLATE" => "tree",
+							"DELAY" => "N",
+							"MAX_LEVEL" => "2",
+							"MENU_CACHE_GET_VARS" => array(
+							),
+							"MENU_CACHE_TIME" => "3600",
+							"MENU_CACHE_TYPE" => "N",
+							"MENU_CACHE_USE_GROUPS" => "Y",
+							"ROOT_MENU_TYPE" => "catalog_m",
+							"USE_EXT" => "N"
+						),
+						false
 					);?>
 				</div>
 			<?$isCatalogPage = preg_match("~^".SITE_DIR."catalog/~", $curPage);?>
 				<div class="bx-content col-md-8 col-lg-8">
+					<div class="row">
+						<div class="col-lg-12" id="navigation">
+							<?$APPLICATION->IncludeComponent("own:breadcrumb", "", array(
+									"START_FROM" => "0",
+									"PATH" => "",
+									"SITE_ID" => "-"
+							),
+									false,
+									Array('HIDE_ICONS' => 'Y')
+							);?>
+						</div>
+					</div>
