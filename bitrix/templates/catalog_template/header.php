@@ -158,8 +158,24 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 				</div>
 				<!--<h1 class="bx-title dbg_title"><?=$APPLICATION->ShowTitle(false);?></h1>-->
 			<div class="row">
-				<div class="left_catalog_menu">
-					afghf
+				<div class="left_catalog_menu col-md-8 col-lg-8">
+					<?$APPLICATION->IncludeComponent(
+							"own:menu",
+							"tree",
+							Array(
+									"ALLOW_MULTI_SELECT" => "N",
+									"CHILD_MENU_TYPE" => "left",
+									"COMPONENT_TEMPLATE" => "tree",
+									"DELAY" => "N",
+									"MAX_LEVEL" => "1",
+									"MENU_CACHE_GET_VARS" => array(""),
+									"MENU_CACHE_TIME" => "3600",
+									"MENU_CACHE_TYPE" => "N",
+									"MENU_CACHE_USE_GROUPS" => "Y",
+									"ROOT_MENU_TYPE" => "left",
+									"USE_EXT" => "N"
+							)
+					);?>
 				</div>
 			<?$isCatalogPage = preg_match("~^".SITE_DIR."catalog/~", $curPage);?>
-				<div class="bx-content <?if ($curPage == "/news/index.php" || $curPage == "/topics/index.php"):?> col-md-8 col-lg-8 <?else:?> col-md-12 col-sm-12 <?endif;?>">
+				<div class="bx-content col-md-8 col-lg-8">
