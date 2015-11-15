@@ -132,7 +132,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 			<?$isCatalogPage = preg_match("~^".SITE_DIR."catalog/~", $curPage);?>
 				<div class="bx-content col-md-9 col-lg-9">
 					<div class="row">
-						<div class="col-lg-12" id="navigation">
+						<div class="col-md-10 col-lg-10" id="navigation">
 							<?$APPLICATION->IncludeComponent("own:breadcrumb", "", array(
 									"START_FROM" => "0",
 									"PATH" => "",
@@ -140,6 +140,24 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 							),
 									false,
 									Array('HIDE_ICONS' => 'Y')
+							);?>
+						</div>
+						<div class="cart_block col-md-2 col-lg-2">
+							<?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "new_cart", Array(
+								"COMPONENT_TEMPLATE" => ".default",
+									"PATH_TO_BASKET" => SITE_DIR."personal/cart/",	// Страница корзины
+									"PATH_TO_PERSONAL" => SITE_DIR."personal/",	// Страница персонального раздела
+									"PATH_TO_PROFILE" => SITE_DIR."personal/",	// Страница профиля
+									"PATH_TO_REGISTER" => SITE_DIR."login/",	// Страница регистрации
+									"POSITION_FIXED" => "N",	// Отображать корзину поверх шаблона
+									"SHOW_AUTHOR" => "N",	// Добавить возможность авторизации
+									"SHOW_EMPTY_VALUES" => "Y",	// Выводить нулевые значения в пустой корзине
+									"SHOW_NUM_PRODUCTS" => "Y",	// Показывать количество товаров
+									"SHOW_PERSONAL_LINK" => "N",	// Отображать персональный раздел
+									"SHOW_PRODUCTS" => "N",	// Показывать список товаров
+									"SHOW_TOTAL_PRICE" => "Y",	// Показывать общую сумму по товарам
+								),
+								false
 							);?>
 						</div>
 					</div>
