@@ -597,7 +597,7 @@ unset($showAddBtn, $showBuyBtn);
 			<div class="clb"></div>
 		</div>
 
-		<div class="bx_md">
+		<div class="bx_md">1
 <div class="item_info_section">
 <?
 if (isset($arResult['OFFERS']) && !empty($arResult['OFFERS']))
